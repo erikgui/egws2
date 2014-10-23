@@ -138,30 +138,14 @@ module.exports = function(grunt) {
                     hostname: '127.0.0.1'
                 }
             }
-        },
-
-        wiredep: {
-            target: {
-                src: [
-                    '<%= app %>/**/*.html'
-                ],
-                exclude: [
-                    'modernizr',
-                    'font-awesome',
-                    'jquery-placeholder',
-                    'jquery.cookie',
-                    'foundation'
-                ]
-            }
         }
 
     });
 
 
     grunt.registerTask('compile-sass', ['sass']);
-    grunt.registerTask('bower-install', ['wiredep']);
 
-    grunt.registerTask('default', ['compile-sass', 'bower-install', 'connect:app', 'watch']);
+    grunt.registerTask('default', ['compile-sass', 'connect:app', 'watch']);
     grunt.registerTask('validate-js', ['jshint']);
     grunt.registerTask('server-dist', ['connect:dist']);
 
