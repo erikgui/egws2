@@ -49,6 +49,11 @@ $fifth-color-position:100%;
     width: 100%;
     height: 100%;
     z-index: -1;
+
+    /* Add layer hack to make the background image appear on different layer */
+    -webkit-backface-visibility: hidden;
+    -webkit-perspective: 1000;
+    -webkit-transform: translate3d(0,0,0);
 }
 
 .logo {
