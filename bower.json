@@ -1,0 +1,6 @@
+{
+  "name": "egws2",
+  "dependencies": {
+    "foundation": "zurb/bower-foundation"
+  }
+}

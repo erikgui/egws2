@@ -13,10 +13,14 @@
     }
 
     function onResize() {
-        console.log("window resized!");
+        setViewportDimensions();
     }
 
     function onLoad() {
+        setViewportDimensions();
+    }
+
+    function setViewportDimensions() {
         viewportWidth = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
         viewportHeight = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
     }
@@ -29,9 +33,9 @@
     }
 
     function update() {
-        document.querySelector(".dawn").style.opacity = Math.max(0, (viewportHeight - lastScrollY)/(viewportHeight));
-        document.querySelector(".day").style.opacity = Math.max(0, (viewportHeight*2 - lastScrollY)/(viewportHeight*2));
-        document.querySelector(".dusk").style.opacity = Math.max(0, (viewportHeight*4 - lastScrollY)/(viewportHeight*4));
+        document.querySelector('.dawn').style.opacity = Math.max(0, (viewportHeight - lastScrollY)/(viewportHeight));
+        document.querySelector('.day').style.opacity = Math.max(0, (viewportHeight*2 - lastScrollY)/(viewportHeight*2));
+        document.querySelector('.dusk').style.opacity = Math.max(0, (viewportHeight*4 - lastScrollY)/(viewportHeight*4));
         ticking = false;
     }
 

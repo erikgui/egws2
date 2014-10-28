@@ -43,15 +43,9 @@ module.exports = function(grunt) {
             dist: {
                 files: [{
                     expand: true,
-                    cwd: '<%= app %>/',
+                    cwd:'<%= app %>/',
                     src: ['fonts/**', '**/*.html', '!**/*.scss', '!bower_components/**'],
                     dest: '<%= dist %>/'
-                }, {
-                    expand: true,
-                    flatten: true,
-                    src: ['<%= app %>/bower_components/font-awesome/fonts/**'],
-                    dest: '<%= dist %>/fonts/',
-                    filter: 'isFile'
                 }]
             },
         },
@@ -71,18 +65,6 @@ module.exports = function(grunt) {
             options: {
                 preserveComments: 'some',
                 mangle: false
-            }
-        },
-
-        htmlmin: {
-            dist: {
-                options: {
-                    removeComments: true,
-                    collapseWhitespace: true
-                },
-                files: {
-                    '<%= dist %>/index.html': '<%= dist %>/index.html' // 'destination': 'source'
-                }
             }
         },
 
@@ -147,24 +129,35 @@ module.exports = function(grunt) {
                 ],
                 exclude: [
                     'modernizr',
-                    'font-awesome',
                     'jquery-placeholder',
                     'jquery.cookie',
                     'foundation'
                 ]
             }
+        },
+
+        htmlmin: {
+            dist: {
+                options: {
+                    removeComments: true,
+                    collapseWhitespace: true
+                },
+                files: {
+                    '<%= dist %>/index.html': '<%= dist %>/index.html'
+                }
+            }
         }
 
     });
 
-
+    
     grunt.registerTask('compile-sass', ['sass']);
     grunt.registerTask('bower-install', ['wiredep']);
-
-    grunt.registerTask('default', ['compile-sass', 'connect:app', 'watch']);
+    
+    grunt.registerTask('default', ['compile-sass', 'bower-install', 'connect:app', 'watch']);
     grunt.registerTask('validate-js', ['jshint']);
     grunt.registerTask('server-dist', ['connect:dist']);
-
+    
     grunt.registerTask('publish', ['compile-sass', 'clean:dist', 'validate-js', 'useminPrepare', 'copy:dist', 'newer:imagemin', 'concat', 'cssmin', 'uglify', 'usemin', 'htmlmin']);
 
 };

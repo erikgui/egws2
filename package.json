@@ -1,7 +1,7 @@
 {
-  "name": "zf5_project",
+  "name": "egws",
   "description": "",
-  "version": "0.0.1",
+  "version": "2.0.0",
   "description": "",
   "homepage": "",
   "author": {
@@ -25,6 +25,7 @@
     "grunt-contrib-jshint": "~0.10.0",
     "grunt-contrib-connect": "~0.8.0",
     "grunt-contrib-htmlmin": "~0.3.0",
+    "grunt-wiredep": "~1.9.0",
     "grunt-usemin": "~2.4.0",
     "grunt-contrib-imagemin": "0.8.1",
     "grunt-newer": "~0.7.0"
