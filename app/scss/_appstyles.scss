@@ -14,46 +14,75 @@ $fourth-color-position:89%;
 $fifth-color:#fdecd0;
 $fifth-color-position:100%;
 
-.five-tone-diagonal-gradient {
-    /* Old browsers */
+@mixin background-gradient {
+    background-repeat: no-repeat;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    -webkit-backface-visibility: hidden;
+    -webkit-perspective: 1000;
+    -webkit-transform: translate3d(0,0,0);
+}
+
+@mixin five-tone-diagonal-gradient(
+    $first-color, 
+    $first-color-position, 
+    $second-color, 
+    $second-color-position,
+    $third-color,
+    $third-color-position,
+    $fourth-color,
+    $fourth-color-position,
+    $fifth-color,
+    $fifth-color-position,
+    $angle) {
+
     background: $first-color;
-    /* FF3.6+ */
-    background: -moz-linear-gradient(-45deg,  $first-color $first-color-position, 
+
+    background: -moz-linear-gradient($angle,  $first-color $first-color-position, 
       $second-color $second-color-position, $third-color $third-color-position, 
       $fourth-color $fourth-color-position, $fifth-color $fifth-color-position);
-    /* Chrome,Safari4+ */
+
     background: -webkit-gradient(linear, left top, right bottom, 
       color-stop($first-color-position,$first-color), 
       color-stop($second-color-position,$second-color), 
       color-stop($third-color-position,$third-color), 
       color-stop($fourth-color-position,$fourth-color), 
       color-stop($fifth-color-position,$fifth-color));
-    /* Chrome10+,Safari5.1+ */
-    background: -webkit-linear-gradient(-45deg, $first-color $first-color-position,
-      $second-color $second-color-position,$third-color $third-color-position,
-      $fourth-color $fourth-color-position,$fifth-color $fifth-color-position);
-    /* Opera 11.10+ */
-    background: -o-linear-gradient(-45deg, $first-color $first-color-position,
-      $second-color $second-color-position,$third-color $third-color-position,
-      $fourth-color $fourth-color-position,$fifth-color $fifth-color-position);
-    /* IE10+ */
-    background: -ms-linear-gradient(-45deg, $first-color $first-color-position,
-      $second-color $second-color-position,$third-color $third-color-position,
-      $fourth-color $fourth-color-position,$fifth-color $fifth-color-position);
-    /* W3C */
-    background: linear-gradient(135deg, $first-color $first-color-position,
-      $second-color $second-color-position,$third-color $third-color-position,
-      $fourth-color $fourth-color-position,$fifth-color $fifth-color-position);
-    background-repeat: no-repeat;
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
 
-    /* Add layer hack to make the background image appear on different layer */
-    -webkit-backface-visibility: hidden;
-    -webkit-perspective: 1000;
-    -webkit-transform: translate3d(0,0,0);
+    background: -webkit-linear-gradient($angle, $first-color $first-color-position,
+      $second-color $second-color-position,$third-color $third-color-position,
+      $fourth-color $fourth-color-position,$fifth-color $fifth-color-position);
+
+    background: -o-linear-gradient($angle, $first-color $first-color-position,
+      $second-color $second-color-position,$third-color $third-color-position,
+      $fourth-color $fourth-color-position,$fifth-color $fifth-color-position);
+
+    background: -ms-linear-gradient($angle, $first-color $first-color-position,
+      $second-color $second-color-position,$third-color $third-color-position,
+      $fourth-color $fourth-color-position,$fifth-color $fifth-color-position);
+
+    background: linear-gradient(180deg - $angle, $first-color $first-color-position,
+      $second-color $second-color-position,$third-color $third-color-position,
+      $fourth-color $fourth-color-position,$fifth-color $fifth-color-position);
+}
+
+.dawn {
+    @include five-tone-diagonal-gradient(#a7d3cb, 0%, #bcc1c4, 32%, #e5cab3, 59%, #fee6c5, 89%, #fdecd0, 100%, -45deg);
+    @include background-gradient;
+}
+.day {
+    @include five-tone-diagonal-gradient(#74bddb, 0%, #a8d1eb, 32%, #cddbf5, 56%, #e4e6fb, 73%, #f6f4f8, 100%, 45deg);
+    @include background-gradient;
+}
+.dusk {
+    @include five-tone-diagonal-gradient(#536a97, 11%, #8087ad, 35%, #bca391, 72%, #bd968a, 96%, #a38b8a, 100%, 90deg);
+    @include background-gradient;
+}
+.night {
+    @include five-tone-diagonal-gradient(#6f749e, 0%, #9a8daf, 31%, #d0a8b9, 58%, #f8bbb1, 80%, #fde6b1, 100%, 135deg);
+    @include background-gradient;
 }
 
 .logo {
@@ -80,9 +109,14 @@ $fifth-color-position:100%;
     justify-content: center;
     text-align: center;
     height: 100%;
+    height: 100vh;
     color: black;
 }
 
 .centered {
     max-width: 50%;
+}
+
+#nav-container {
+    z-index: -1;
 }

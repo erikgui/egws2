@@ -8039,27 +8039,73 @@ th.hide-for-touch {
   }
 }
 /* all app scss styles here */
-.five-tone-diagonal-gradient {
-  /* Old browsers */
+.dawn {
   background: #a7d3cb;
-  /* FF3.6+ */
   background: -moz-linear-gradient(-45deg, #a7d3cb 0%, #bcc1c4 32%, #e5cab3 59%, #fee6c5 89%, #fdecd0 100%);
-  /* Chrome,Safari4+ */
   background: -webkit-gradient(linear, left top, right bottom, color-stop(0%, #a7d3cb), color-stop(32%, #bcc1c4), color-stop(59%, #e5cab3), color-stop(89%, #fee6c5), color-stop(100%, #fdecd0));
-  /* Chrome10+,Safari5.1+ */
   background: -webkit-linear-gradient(-45deg, #a7d3cb 0%, #bcc1c4 32%, #e5cab3 59%, #fee6c5 89%, #fdecd0 100%);
-  /* Opera 11.10+ */
   background: -o-linear-gradient(-45deg, #a7d3cb 0%, #bcc1c4 32%, #e5cab3 59%, #fee6c5 89%, #fdecd0 100%);
-  /* IE10+ */
   background: -ms-linear-gradient(-45deg, #a7d3cb 0%, #bcc1c4 32%, #e5cab3 59%, #fee6c5 89%, #fdecd0 100%);
-  /* W3C */
-  background: linear-gradient(135deg, #a7d3cb 0%, #bcc1c4 32%, #e5cab3 59%, #fee6c5 89%, #fdecd0 100%);
+  background: linear-gradient(225deg, #a7d3cb 0%, #bcc1c4 32%, #e5cab3 59%, #fee6c5 89%, #fdecd0 100%);
   background-repeat: no-repeat;
   position: fixed;
   width: 100%;
   height: 100%;
   z-index: -1;
-  /* Add layer hack to make the background image appear on different layer */
+  -webkit-backface-visibility: hidden;
+  -webkit-perspective: 1000;
+  -webkit-transform: translate3d(0, 0, 0);
+}
+
+.day {
+  background: #74bddb;
+  background: -moz-linear-gradient(45deg, #74bddb 0%, #a8d1eb 32%, #cddbf5 56%, #e4e6fb 73%, #f6f4f8 100%);
+  background: -webkit-gradient(linear, left top, right bottom, color-stop(0%, #74bddb), color-stop(32%, #a8d1eb), color-stop(56%, #cddbf5), color-stop(73%, #e4e6fb), color-stop(100%, #f6f4f8));
+  background: -webkit-linear-gradient(45deg, #74bddb 0%, #a8d1eb 32%, #cddbf5 56%, #e4e6fb 73%, #f6f4f8 100%);
+  background: -o-linear-gradient(45deg, #74bddb 0%, #a8d1eb 32%, #cddbf5 56%, #e4e6fb 73%, #f6f4f8 100%);
+  background: -ms-linear-gradient(45deg, #74bddb 0%, #a8d1eb 32%, #cddbf5 56%, #e4e6fb 73%, #f6f4f8 100%);
+  background: linear-gradient(135deg, #74bddb 0%, #a8d1eb 32%, #cddbf5 56%, #e4e6fb 73%, #f6f4f8 100%);
+  background-repeat: no-repeat;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  -webkit-backface-visibility: hidden;
+  -webkit-perspective: 1000;
+  -webkit-transform: translate3d(0, 0, 0);
+}
+
+.dusk {
+  background: #536a97;
+  background: -moz-linear-gradient(90deg, #536a97 11%, #8087ad 35%, #bca391 72%, #bd968a 96%, #a38b8a 100%);
+  background: -webkit-gradient(linear, left top, right bottom, color-stop(11%, #536a97), color-stop(35%, #8087ad), color-stop(72%, #bca391), color-stop(96%, #bd968a), color-stop(100%, #a38b8a));
+  background: -webkit-linear-gradient(90deg, #536a97 11%, #8087ad 35%, #bca391 72%, #bd968a 96%, #a38b8a 100%);
+  background: -o-linear-gradient(90deg, #536a97 11%, #8087ad 35%, #bca391 72%, #bd968a 96%, #a38b8a 100%);
+  background: -ms-linear-gradient(90deg, #536a97 11%, #8087ad 35%, #bca391 72%, #bd968a 96%, #a38b8a 100%);
+  background: linear-gradient(90deg, #536a97 11%, #8087ad 35%, #bca391 72%, #bd968a 96%, #a38b8a 100%);
+  background-repeat: no-repeat;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  -webkit-backface-visibility: hidden;
+  -webkit-perspective: 1000;
+  -webkit-transform: translate3d(0, 0, 0);
+}
+
+.night {
+  background: #6f749e;
+  background: -moz-linear-gradient(135deg, #6f749e 0%, #9a8daf 31%, #d0a8b9 58%, #f8bbb1 80%, #fde6b1 100%);
+  background: -webkit-gradient(linear, left top, right bottom, color-stop(0%, #6f749e), color-stop(31%, #9a8daf), color-stop(58%, #d0a8b9), color-stop(80%, #f8bbb1), color-stop(100%, #fde6b1));
+  background: -webkit-linear-gradient(135deg, #6f749e 0%, #9a8daf 31%, #d0a8b9 58%, #f8bbb1 80%, #fde6b1 100%);
+  background: -o-linear-gradient(135deg, #6f749e 0%, #9a8daf 31%, #d0a8b9 58%, #f8bbb1 80%, #fde6b1 100%);
+  background: -ms-linear-gradient(135deg, #6f749e 0%, #9a8daf 31%, #d0a8b9 58%, #f8bbb1 80%, #fde6b1 100%);
+  background: linear-gradient(45deg, #6f749e 0%, #9a8daf 31%, #d0a8b9 58%, #f8bbb1 80%, #fde6b1 100%);
+  background-repeat: no-repeat;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
   -webkit-backface-visibility: hidden;
   -webkit-perspective: 1000;
   -webkit-transform: translate3d(0, 0, 0);
@@ -8099,9 +8145,14 @@ th.hide-for-touch {
   justify-content: center;
   text-align: center;
   height: 100%;
+  height: 100vh;
   color: black;
 }
 
 .centered {
   max-width: 50%;
+}
+
+#nav-container {
+  z-index: -1;
 }
