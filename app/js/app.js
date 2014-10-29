@@ -4,11 +4,11 @@
 
     var viewportWidth;
     var viewportHeight;
-    var lastScrollY = 0,
-        ticking = false;
+    var _scrollY = 0,
+        _ticking = false;
 
     function onScroll() {
-        lastScrollY = window.scrollY;
+        _scrollY = window.scrollY;
         requestTick();
     }
 
@@ -26,17 +26,17 @@
     }
 
     function requestTick() {
-        if (!ticking) {
+        if (!_ticking) {
             requestAnimationFrame(update);
-            ticking = true;
+            _ticking = true;
         }
     }
 
     function update() {
-        document.querySelector('.dawn').style.opacity = Math.max(0, (viewportHeight - lastScrollY)/(viewportHeight));
-        document.querySelector('.day').style.opacity = Math.max(0, (viewportHeight*2 - lastScrollY)/(viewportHeight*2));
-        document.querySelector('.dusk').style.opacity = Math.max(0, (viewportHeight*4 - lastScrollY)/(viewportHeight*4));
-        ticking = false;
+        document.querySelector('.dawn').style.opacity = Math.max(0, (viewportHeight - _scrollY)/(viewportHeight));
+        document.querySelector('.day').style.opacity = Math.max(0, (viewportHeight*2 - _scrollY)/(viewportHeight*2));
+        document.querySelector('.dusk').style.opacity = Math.max(0, (viewportHeight*3 - _scrollY)/(viewportHeight*3));
+        _ticking = false;
     }
 
     window.addEventListener('scroll', onScroll, false);
