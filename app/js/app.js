@@ -35,7 +35,7 @@
     function update() {
         document.querySelector('.dawn').style.opacity = Math.max(0, (viewportHeight - _scrollY)/(viewportHeight));
         document.querySelector('.day').style.opacity = Math.max(0, (viewportHeight*2 - _scrollY)/(viewportHeight*2));
-        document.querySelector('.dusk').style.opacity = Math.max(0, (viewportHeight*3 - _scrollY)/(viewportHeight*3));
+        document.querySelector('.dusk').style.opacity = Math.max(0, (viewportHeight*4 - _scrollY)/(viewportHeight*4));
         _ticking = false;
     }
 
