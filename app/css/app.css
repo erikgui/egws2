@@ -8255,10 +8255,57 @@ th.hide-for-touch {
 }
 
 .bounce {
-  -webkit-animation: bounce 2s 2s;
-  -moz-animation: bounce 2s 2s;
-  -ms-animation: bounce 2s 2s;
-  animation: bounce 2s 2s;
+  -webkit-animation: bounce 2s 0s 2;
+  -moz-animation: bounce 2s 0s 2;
+  -ms-animation: bounce 2s 0s 2;
+  animation: bounce 2s 0s 2;
+}
+
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@-moz-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@-ms-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.fade-in {
+  -webkit-animation: fadeIn 3s ease-in 1;
+  -moz-animation: fadeIn 3s ease-in 1;
+  -ms-animation: fadeIn 3s ease-in 1;
+  animation: fadeIn 3s ease-in 1;
 }
 
 .arrow-down {
@@ -8270,4 +8317,15 @@ th.hide-for-touch {
   left: 50%;
   background: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjwhRE9DVFlQRSBzdmcgIFBVQkxJQyAnLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4nICAnaHR0cDovL3d3dy53My5vcmcvR3JhcGhpY3MvU1ZHLzEuMS9EVEQvc3ZnMTEuZHRkJz48c3ZnIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDUwIDUwIiBoZWlnaHQ9IjUwcHgiIGlkPSJMYXllcl8xIiB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCA1MCA1MCIgd2lkdGg9IjUwcHgiIHhtbDpzcGFjZT0icHJlc2VydmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiPjxyZWN0IGZpbGw9Im5vbmUiIGhlaWdodD0iNTAiIHdpZHRoPSI1MCIvPjxwb2x5Z29uIHBvaW50cz0iNDcuMjUsMTUgNDUuMTY0LDEyLjkxNCAyNSwzMy4wNzggNC44MzYsMTIuOTE0IDIuNzUsMTUgMjUsMzcuMjUgIi8+PC9zdmc+");
   background-repeat: no-repeat;
+}
+
+.square {
+  width: 300px;
+  height: 300px;
+}
+
+.ps4-logo {
+  width: 500px;
+  height: 200px;
+  background-color: #1565c0;
 }

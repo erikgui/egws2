@@ -18,6 +18,8 @@
 
     function onLoad() {
         setViewportDimensions();
+        onScroll();
+        update();
     }
 
     function setViewportDimensions() {
