@@ -45,4 +45,9 @@
     window.addEventListener('resize', onResize, false);
     window.addEventListener('load', onLoad, false);
 
+    $(".navToggle").click (function(){
+      $(this).toggleClass("open");
+      $("nav").toggleClass("open");
+    });
+
 })();
