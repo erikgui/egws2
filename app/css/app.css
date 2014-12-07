@@ -8466,15 +8466,18 @@ nav ul li {
   }
 }
 
-.fade-in {
-  -webkit-animation: fadeIn 3s ease-in 1;
-  -moz-animation: fadeIn 3s ease-in 1;
-  -ms-animation: fadeIn 3s ease-in 1;
-  animation: fadeIn 3s ease-in 1;
-}
-
 .hidden {
   opacity: 0;
+}
+
+.project-contents {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  flex-direction: column;
+  height: 200%;
+  color: #424242;
 }
 
 .projects {
@@ -8485,6 +8488,7 @@ nav ul li {
   height: 500px;
   background-color: rgba(0, 0, 0, 0.1);
   padding: 10px;
+  margin-bottom: 40px;
 }
 
 .ps4-description {
@@ -8505,4 +8509,19 @@ nav ul li {
 .ps4-logo {
   width: 500px;
   height: 100px;
+}
+
+.tv-slideshow {
+  width: 472px;
+  height: 267px;
+  background-color: black;
+  position: absolute !important;
+  top: 12px;
+  left: 11px;
+  z-index: -1;
+}
+
+.tv-slides {
+  width: 100%;
+  height: 100%;
 }
