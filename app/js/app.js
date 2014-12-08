@@ -19,6 +19,7 @@
     function onLoad() {
         setViewportDimensions();
         onScroll();
+        startSlideshows();
         update();
     }
 
@@ -40,12 +41,41 @@
         document.querySelector('.dusk').style.opacity = Math.max(0, (viewportHeight*4 - _scrollY)/(viewportHeight*4));
         _ticking = false;
 
-        console.log('_scrollY', _scrollY)
-        console.log('viewportHeight', viewportHeight)
-
         if (_scrollY > viewportHeight/2) {
             $('.ps4-carousel').addClass('animated fadeInLeft');
         }
+        if (_scrollY > viewportHeight) {
+            $('.project-description.image2').addClass('animated fadeInRight');
+        }
+        if (_scrollY > viewportHeight*1.5) {
+            $('.project-description.image3').addClass('animated fadeInLeft');
+        }
+    }
+
+    function startSlideshows() {
+        $('.tv-slideshow').slick({
+            dots: false,
+            infinite: true,
+            speed: 500,
+            fade: true,
+            arrows: false,
+            autoplay: true,
+            autoplaySpeed: 1500,
+            slide: 'img',
+            cssEase: 'linear'
+        });
+
+        $('.project-description.image3').slick({
+            dots: false,
+            infinite: true,
+            speed: 500,
+            fade: true,
+            arrows: false,
+            autoplay: true,
+            autoplaySpeed: 1500,
+            slide: 'img',
+            cssEase: 'linear'
+        });
     }
 
     window.addEventListener('scroll', onScroll, false);
@@ -55,20 +85,6 @@
     $('.navToggle').click(function(){
         $(this).toggleClass('open');
         $('nav').toggleClass('open');
-    });
-
-    $(document).ready(function() {
-        $('.tv-slideshow').slick({
-            dots: false,
-            infinite: true,
-            speed: 500,
-            fade: true,
-            arrows: false,
-            autoplay: true,
-            autoplaySpeed: 2000,
-            slide: 'img',
-            cssEase: 'linear'
-        });
     });
 
 })();

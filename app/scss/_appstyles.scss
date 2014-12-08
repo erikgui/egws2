@@ -154,7 +154,7 @@ $fifth-color-position:100%;
     color: #424242;
 }
 
-.projects {
+.project {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -165,8 +165,16 @@ $fifth-color-position:100%;
     margin-bottom: 40px;
 }
 
-.ps4-description {
+.project-description {
     align-self: center;
+}
+
+.project-description.text {
+    width: 500px;
+}
+
+.project-description.image3 {
+    width: 600px;
 }
 
 .ps4-carousel {
