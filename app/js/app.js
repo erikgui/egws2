@@ -20,6 +20,7 @@
         setViewportDimensions();
         onScroll();
         startSlideshows();
+        enableMenu();
         update();
     }
 
@@ -52,8 +53,16 @@
         }
     }
 
+    function enableMenu() {
+        $('.navToggle').click(function(){
+            $(this).toggleClass('open');
+            $('nav').toggleClass('open');
+        });
+    }
+
     function startSlideshows() {
         $('.tv-slideshow').slick({
+            accessibility: false,
             dots: false,
             infinite: true,
             speed: 500,
@@ -62,10 +71,13 @@
             autoplay: true,
             autoplaySpeed: 1500,
             slide: 'img',
-            cssEase: 'linear'
+            cssEase: 'linear',
+            draggable: false,
+            lazyLoad: 'ondemand'
         });
 
         $('.project-description.image3').slick({
+            accessibility: false,
             dots: false,
             infinite: true,
             speed: 500,
@@ -74,17 +86,14 @@
             autoplay: true,
             autoplaySpeed: 1500,
             slide: 'img',
-            cssEase: 'linear'
+            draggable: false,
+            cssEase: 'linear',
+            lazyLoad: 'ondemand'
         });
     }
 
     window.addEventListener('scroll', onScroll, false);
     window.addEventListener('resize', onResize, false);
     window.addEventListener('load', onLoad, false);
-
-    $('.navToggle').click(function(){
-        $(this).toggleClass('open');
-        $('nav').toggleClass('open');
-    });
 
 })();

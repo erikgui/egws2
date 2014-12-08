@@ -155,18 +155,26 @@ $fifth-color-position:100%;
 }
 
 .project {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
     width: 100%;
-    height: 500px;
-    background-color: rgba(0,0,0,0.1);
+    min-height: 500px;
     padding: 10px;
     margin-bottom: 40px;
+    overflow: hidden;
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 20px;
+    justify-content: center;
+    background-color: rgba(0,0,0,0.1);
+}
+
+.project.last {
+    min-height: 200px;
 }
 
 .project-description {
     align-self: center;
+    width: 400px;
+    margin: 20px;
 }
 
 .project-description.text {
@@ -176,6 +184,15 @@ $fifth-color-position:100%;
 .project-description.image3 {
     width: 600px;
 }
+
+.project-description p {
+    color: white;
+}
+
+.project-description.text img {
+    margin-bottom: 20px;
+}
+
 
 .ps4-carousel {
     align-self: center;
