@@ -1,4 +1,3 @@
-@charset "UTF-8";
 /*! normalize.css v3.0.1 | MIT License | git.io/normalize */
 /**
  * 1. Set default font family to sans-serif.
@@ -8291,17 +8290,51 @@ nav {
   transition-duration: 0.5s;
   transition-timing-function: swing;
   overflow: hidden;
+  color: white;
+  display: flex;
+  justify-content: center;
 }
 nav.open {
   height: 60px;
 }
-nav ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
+nav > a {
+  position: relative;
+  color: rgba(255, 255, 255, 0.8);
+  align-self: center;
+  margin: 10px;
 }
-nav ul li {
-  display: inline-block;
+nav > a:link {
+  color: rgba(255, 255, 255, 0.8);
+}
+nav > a:visited {
+  color: rgba(255, 255, 255, 0.8);
+}
+nav > a:hover {
+  color: white;
+}
+nav > a:active {
+  color: rgba(255, 255, 255, 0.8);
+}
+nav > a:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: white;
+  visibility: hidden;
+  -webkit-transform: scaleX(0);
+  transform: scaleX(0);
+  -webkit-transition: all 0.3s ease-in-out 0s;
+  transition: all 0.3s ease-in-out 0s;
+  color: rgba(255, 255, 255, 0.8);
+}
+nav > a:hover:before {
+  visibility: visible;
+  -webkit-transform: scaleX(1);
+  transform: scaleX(1);
+  color: rgba(255, 255, 255, 0.8);
 }
 
 .dawn {
@@ -8473,12 +8506,12 @@ nav ul li {
 
 .project-contents {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  flex-direction: column;
-  height: 200%;
   color: #424242;
+  min-height: 200%;
+  text-align: center;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .project {
@@ -8495,7 +8528,18 @@ nav ul li {
 }
 
 .project.last {
+  cursor: pointer;
+  font-size: 30px;
   min-height: 200px;
+  transition: all 0.2s ease;
+}
+
+.project.last:hover {
+  color: white;
+}
+
+.project.last > * {
+  align-self: center;
 }
 
 .project-description {
@@ -8549,4 +8593,10 @@ nav ul li {
 .tv-slides {
   width: 100%;
   height: 100%;
+}
+
+.blog-link-icon {
+  width: 64px;
+  height: 64px;
+  margin-right: 10px;
 }

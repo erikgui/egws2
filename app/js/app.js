@@ -19,7 +19,6 @@
     function onLoad() {
         setViewportDimensions();
         onScroll();
-        startSlideshows();
         enableMenu();
         update();
     }
@@ -43,12 +42,40 @@
         _ticking = false;
 
         if (_scrollY > viewportHeight/2) {
+            $('.tv-slideshow').slick({
+                accessibility: false,
+                dots: false,
+                infinite: true,
+                speed: 500,
+                fade: true,
+                arrows: false,
+                autoplay: true,
+                autoplaySpeed: 1500,
+                slide: 'img',
+                cssEase: 'linear',
+                draggable: false,
+                lazyLoad: 'ondemand'
+            });
             $('.ps4-carousel').addClass('animated fadeInLeft');
         }
         if (_scrollY > viewportHeight) {
             $('.project-description.image2').addClass('animated fadeInRight');
         }
         if (_scrollY > viewportHeight*1.5) {
+            $('.project-description.image3').slick({
+                accessibility: false,
+                dots: false,
+                infinite: true,
+                speed: 500,
+                fade: true,
+                arrows: false,
+                autoplay: true,
+                autoplaySpeed: 1500,
+                slide: 'img',
+                draggable: false,
+                cssEase: 'linear',
+                lazyLoad: 'ondemand'
+            });
             $('.project-description.image3').addClass('animated fadeInLeft');
         }
     }
@@ -57,38 +84,6 @@
         $('.navToggle').click(function(){
             $(this).toggleClass('open');
             $('nav').toggleClass('open');
-        });
-    }
-
-    function startSlideshows() {
-        $('.tv-slideshow').slick({
-            accessibility: false,
-            dots: false,
-            infinite: true,
-            speed: 500,
-            fade: true,
-            arrows: false,
-            autoplay: true,
-            autoplaySpeed: 1500,
-            slide: 'img',
-            cssEase: 'linear',
-            draggable: false,
-            lazyLoad: 'ondemand'
-        });
-
-        $('.project-description.image3').slick({
-            accessibility: false,
-            dots: false,
-            infinite: true,
-            speed: 500,
-            fade: true,
-            arrows: false,
-            autoplay: true,
-            autoplaySpeed: 1500,
-            slide: 'img',
-            draggable: false,
-            cssEase: 'linear',
-            lazyLoad: 'ondemand'
         });
     }
 
