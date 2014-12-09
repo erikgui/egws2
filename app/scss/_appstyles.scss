@@ -4,6 +4,7 @@
 @import "compass/utilities";
 @import "arrowstyles";
 @import "navstyles";
+@import "iconstyles";
 
 $first-color :#a7d3cb;
 $first-color-position :0%;
@@ -172,6 +173,8 @@ $fifth-color-position:100%;
     font-size: 30px;
     min-height: 200px;
     transition: all 0.2s ease;
+    text-decoration: none;
+    color: #333;
 }
 
 .project.last:hover {
@@ -240,4 +243,21 @@ $fifth-color-position:100%;
     width: 64px;
     height: 64px;
     margin-right: 10px;   
+}
+
+.contents.about {
+    flex-direction: column;
+}
+.about-header {
+    font-size: 36px;
+    color: white;
+}
+
+.about-description {
+    font-size: 20px;
+    max-width: 1000px;
+}
+
+.about-description span {
+    color: white;
 }
