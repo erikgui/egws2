@@ -85,6 +85,31 @@
             $(this).toggleClass('open');
             $('nav').toggleClass('open');
         });
+
+        $('.menu-home').click(function() {
+            $("html, body").animate({
+                scrollTop: "0px",
+                easing: "easeOutExpo"
+            });
+        });
+
+        $('.menu-projects').click(function() {
+            var projectBounds = document.querySelector(".project-contents").getBoundingClientRect();
+            var top = $("html, body").scrollTop() + projectBounds.top;
+            $("html, body").animate({
+                scrollTop: top + "px",
+                easing: "easeOutExpo"
+            });
+        });
+
+        $('.menu-about').click(function() {
+            var aboutBounds = document.querySelector(".about").getBoundingClientRect();
+            var top = $("html, body").scrollTop() + aboutBounds.top;
+            $("html, body").animate({
+                scrollTop: top + "px",
+                easing: "easeOutExpo"
+            });
+        });
     }
 
     window.addEventListener('scroll', onScroll, false);
